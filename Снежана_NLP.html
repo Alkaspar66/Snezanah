@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НЛП-Практик — Снежана Ходец</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #212121; 
+            --accent-gold: #C5A06F; 
+            --text-main: #F5F5F0; 
+            --text-secondary: #E1E8EB; 
+            --card-bg: #2b2b2b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); margin-bottom: 20px; }
+        h2 { text-align: center; margin-top: 60px; border-bottom: 1px solid rgba(197, 160, 111, 0.2); padding-bottom: 15px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        /* HERO SECTION */
+        .course-hero { 
+            text-align: center; 
+            padding: 80px 0 40px; 
+            border-bottom: 1px solid rgba(197, 160, 111, 0.2);
+        }
+        .date-badge { 
+            display: inline-block; 
+            background: var(--accent-gold); 
+            color: var(--bg-color); 
+            padding: 8px 20px; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .course-intro-text {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-tag {
+            font-size: 1.6rem;
+            color: var(--text-main);
+            margin: 20px 0 5px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .duration-tag {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .intro-note {
+            background: rgba(197, 160, 111, 0.1);
+            border: 1px dashed var(--accent-gold);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* GRID SECTIONS */
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .card ul { list-style: none; }
+        .card ul li { margin-bottom: 10px; position: relative; padding-left: 25px; font-size: 0.95rem; }
+        .card ul li::before { content: "✓"; color: var(--accent-gold); position: absolute; left: 0; font-weight: bold; }
+
+        /* INSTRUCTOR SECTION */
+        .instructor-block {
+            background: #1a1a1a;
+            padding: 60px 20px;
+            margin: 60px -20px;
+            text-align: center;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-gold);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .credentials { font-style: italic; color: var(--text-secondary); max-width: 800px; margin: 0 auto 30px; }
+
+        /* SYLLABUS */
+        .syllabus-part {
+            margin-bottom: 40px;
+            padding: 35px;
+            background: rgba(43, 43, 43, 0.4);
+            border-radius: 15px;
+            border: 1px solid rgba(197, 160, 111, 0.1);
+        }
+        .syllabus-part h3 { border-bottom: 1px solid rgba(197, 160, 111, 0.3); padding-bottom: 10px; }
+        .syllabus-part p { margin-bottom: 15px; font-weight: 600; color: var(--accent-gold); }
+        .syllabus-part ul { list-style: none; margin-top: 15px; }
+        .syllabus-part li { margin-bottom: 12px; position: relative; padding-left: 20px; color: var(--text-secondary); }
+        .syllabus-part li::before { content: "•"; color: var(--accent-gold); position: absolute; left: 0; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--bg-color);
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(197, 160, 111, 0.3); }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        .btn-outline:hover { background: var(--accent-gold); color: var(--bg-color); }
+
+        .contact-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
+        .wa { background: #25D366; color: white; }
+        .tg { background: #0088cc; color: white; }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            background: #111;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .btn { width: 100%; margin: 10px 0; }
+            .instructor-block { margin: 60px -20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <section class="course-hero">
+        <div class="date-badge">Старт: 7 мая 2026г.</div>
+        <h1>НЛП-Практик:<br>«Управление эмоциями, коммуникация и здоровье»</h1>
+    </section>
+
+    <section class="course-intro-text">
+        <p>Полный сертификационный курс НЛП (15 занятий по 3 часа), отвечающий международным стандартам. Основное внимание уделяется практическим упражнениям и техникам. Вы получите эффективные инструменты для улучшения качества жизни, своей и других.</p>
+    </section>
+
+    <section id="summary">
+        <h2>Что даст вам этот курс?</h2>
+        <div class="grid-section">
+            <div class="card">
+                <h3>Личная эффективность</h3>
+                <ul>
+                    <li>Лучший контроль над своими эмоциями и состояниями</li>
+                    <li>Избавление от страхов, фобий и вредных привычек</li>
+                    <li>Постановка целей, которые реализуются легко и быстро</li>
+                    <li>Глубинное понимание своих ценностей и миссии</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Коммуникация и здоровье</h3>
+                <ul>
+                    <li>Мастерство убеждения и чтения языка тела</li>
+                    <li>Защита от манипуляций и управление конфликтами</li>
+                    <li>Инструменты работы с психосоматикой и аллергиями</li>
+                    <li>Навык построения гармоничных отношений</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="price-tag">Стоимость курса: 1300 евро</p>
+        <p class="duration-tag">Продолжительность программы: 15 занятий</p>
+        
+        <div class="intro-note">
+            <strong>ВАЖНО!</strong> Первое занятие является вводным. У вас есть возможность записаться на основную программу после посещения этого ознакомительного урока.
+        </div>
+
+        <div class="contact-group">
+            <a href="#register" class="btn">Записаться</a>
+            <a href="#full-syllabus" class="btn btn-outline">Полный силабус программы</a>
+        </div>
+    </section>
+
+    <section class="instructor-block">
+        <img src="snezanа.jpg" alt="Снежана Ходец" class="profile-img">
+        <p style="color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Автор и ведущая курса</p>
+        <h1>Снежана Ходец</h1>
+        <p class="credentials">
+            Психолог, Холистический Психотерапевт, Гипнолог, NLP Master, Инструктор Нейрографики. <br>
+            Член Лиги гипнотерапевтов Европы. Специалист в области психосоматики, КТП, трансперсональной терапии и коучинга.<br>
+			Практический стаж - 18 лет.
+        </p>
+        
+    </section>
+
+    <section id="full-syllabus">
+        <h2>Программа курса</h2>
+
+        <div class="syllabus-part">
+            <h3>Часть 1. Управление эмоциями: когда чувства приходят в восторг от возможностей</h3>
+            <p>Изучение механизмов управления внутренними состояниями, работа с ценностями и стратегиями успеха.</p>
+            <ul>
+                <li>Техника "6 точек" для освобождения от злости, обиды, раздражения и усталости.</li>
+                <li>Методы наполнения ресурсами: радость, любовь, спокойствие.</li>
+                <li>Преодоление стеснительности и страха, развитие уверенности в себе.</li>
+                <li>Техника «Круг совершенства» — инструмент мгновенного входа в нужное состояние.</li>
+                <li>Шкалирование эмоций: управление уровнем адреналина, радости и уверенности.</li>
+                <li>5 способов нейтрализации эмоциональной боли.</li>
+                <li>Якоря — установка и использование «кнопок запуска» состояний.</li>
+                <li>Логические уровни — глубинное понимание себя и своей миссии.</li>
+                <li>Техника «Взмах» — избавление от вредных привычек и создание внутренних напоминаний.</li>
+                <li>Стратегия творчества Уолта Диснея — превращение мечты в реальный план действий.</li>
+                <li>Практическое целеполагание и техники достижения целей.</li>
+            </ul>
+        </div>
+
+        <div class="syllabus-part">
+            <h3>Часть 2. Язык тела и мастерство убеждения</h3>
+            <p>Развитие навыков невербальной коммуникации, калибровки собеседника и защиты от манипуляций.</p>
+            <ul>
+                <li>Калибровка — умение читать малейшие изменения в мимике и жестах.</li>
+                <li>Создание бессознательного доверия (раппорт) и общение «на одной волне».</li>
+                <li>Глазные сигналы доступа — понимание внутренних процессов мышления по движению глаз.</li>
+                <li>Детекция лжи и правды в разговоре.</li>
+                <li>ВАК-модель: работа с визуалами, аудиалами и кинестетиками.</li>
+                <li>Мета-модель — искусство задавать вопросы для изменения ограничивающих убеждений.</li>
+                <li>Рефрейминг — умение находить позитив в любой ситуации и менять контекст.</li>
+                <li>Техника «3 позиции восприятия» для разрешения любых межличностных конфликтов.</li>
+                <li>Эффективная реакция на критику, давление и оскорбления.</li>
+                <li>Навыки убеждения, ведения за собой и комфортного отказа (умение говорить «нет»).</li>
+            </ul>
+        </div>
+
+        <div class="syllabus-part">
+            <h3>Часть 3. Здоровье и внутренняя гармония</h3>
+            <p>Работа с психосоматикой, подсознанием, глубокими травмами и коррекцией веса.</p>
+            <ul>
+                <li>Избавление от зависимостей (курение, алкоголь, пищевые привычки).</li>
+                <li>Техника «Взрыв навязчивости» для борьбы с тягой к сладкому и т.д.</li>
+                <li>НЛП в диетологии: достижение стройности без насилия над собой, «Шкала голода-сытости».</li>
+                <li>Техника «Поход к мудрецу» — получение ответов от подсознания.</li>
+                <li>Техники снятия физической боли и быстрого лечения аллергий.</li>
+                <li>Работа с тяжелыми и «неизлечимыми» болезнями через контакт с телом.</li>
+                <li>Интеграция конфликтующих частей для решения внутренних противоречий.</li>
+                <li>Лечение фобий, страхов, панических атак и депрессивных состояний.</li>
+                <li>Исцеление детских травм и изменение негативных импринтов (включая внутриутробный период).</li>
+                <li>Работа с горем утраты и закрытие прошлых отношений.</li>
+                <li>Техника-ритуал освобождения от эмоциональной зависимости.</li>
+                <li>Заключение договора с подсознанием на долгую и счастливую жизнь.</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<footer id="register">
+    <h2>Записаться на программу</h2>
+    <p>Свяжитесь со Снежаной Ходец для регистрации на ознакомительное занятие и фиксации стоимости курса.</p>
+    
+    <div class="contact-group">
+        <a href="https://wa.me/972506611443" class="btn wa" target="_blank">Написать в WhatsApp</a>
+        <a href="https://t.me/snezanah" class="btn tg" target="_blank">Написать в Telegram</a>
+    </div>
+
+    <p style="margin-top: 50px; font-size: 0.85rem; opacity: 0.6;">
+        Израиль, Ашкелон | © 2026 Снежана Ходец. <br>
+        Сертификация международного образца (IANLP, ICU, ICTA).
+    </p>
+</footer>
+
+</body>
+</html>
