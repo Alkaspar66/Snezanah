@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личные консультации — Снежана Ходец</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FAF8F5; /* Теплый кремовый */
+            --accent-gold: #B88A44; /* Благородная бронза */
+            --text-main: #2C2621; /* Глубокий кофейный */
+            --text-secondary: #5D544D; /* Приглушенный коричневый */
+            --card-bg: #FFFFFF;
+            --btn-wa: #25D366;
+            --btn-tg: #0088cc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); }
+        h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 10px; }
+        h2 { text-align: center; margin: 60px 0 30px; font-size: 2rem; position: relative; padding-bottom: 15px; }
+        h2::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: var(--accent-gold); opacity: 0.5; }
+
+        .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
+
+        /* HEADER SECTION */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 20px 40px rgba(184, 138, 68, 0.12);
+            margin-bottom: 30px;
+        }
+
+        .bio-title { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-gold); font-weight: 600; margin-bottom: 5px; }
+
+        /* CONTENT STYLES */
+        .intro-block {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-main);
+        }
+
+        .text-section {
+            background: var(--card-bg);
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            margin-bottom: 40px;
+        }
+
+        .text-section p { margin-bottom: 20px; }
+
+        .feature-list { list-style: none; margin-top: 30px; }
+        .feature-list li { 
+            margin-bottom: 25px; 
+            position: relative; 
+            padding-left: 35px; 
+        }
+        .feature-list li::before { 
+            content: "✦"; 
+            color: var(--accent-gold); 
+            position: absolute; 
+            left: 0; 
+            font-size: 1.2rem;
+            top: -2px;
+        }
+        .feature-list strong { color: var(--accent-gold); display: block; font-size: 1.1rem; margin-bottom: 5px; }
+
+        .conclusion-block {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            border-top: 1px solid rgba(184, 138, 68, 0.2);
+            border-bottom: 1px solid rgba(184, 138, 68, 0.2);
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .final-invite {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 50px;
+        }
+
+        /* BUTTONS */
+        .cta-box {
+            text-align: center;
+            padding: 50px;
+            background: #fff;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(184, 138, 68, 0.08);
+        }
+
+        .contact-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            margin-top: 35px; 
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 350px;
+            padding: 20px 35px;
+            text-decoration: none;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-align: center;
+        }
+
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+        
+        .wa { background: var(--btn-wa); color: #fff; }
+        .tg { background: var(--btn-tg); color: #fff; }
+        .phone { background: var(--accent-gold); color: #fff; }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-bottom: 40px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        @media (min-width: 768px) {
+            .contact-group { flex-direction: row; justify-content: center; }
+            .btn { width: auto; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="profile-section">
+        <img src="./S2.jpg" alt="Снежана Ходец" class="profile-img">
+        <p class="bio-title">Психолог • Гипнолог • Холистический Психотерапевт</p>
+        <h1>Снежана Ходец</h1>
+    </header>
+
+    <div class="intro-block">
+        <p>Личная встреча — это не просто разбор запроса или работа с «проблемой». Это пространство, где вы наконец-то можете быть услышаны по-настоящему.</p>
+        <p style="margin-top: 20px;">Многие приходят ко мне за техниками НЛП или гипноза, но уносят с собой нечто гораздо большее. Я делюсь с вами своим опытом, своим глубоким вниманием и, прежде всего, своим сердцем. Я создаю ту самую атмосферу, в которой «гонка» замирает, и начинаются настоящие чудеса трансформации.</p>
+    </div>
+
+    <section class="text-section">
+        <h2>Что происходит, когда мы рядом?</h2>
+        <p>Работа со мной — это не про навязывание решений. Это бережное путешествие, где я лишь «зажигаю фонарь», чтобы вы сами увидели свою дорогу.</p>
+        
+        <ul class="feature-list">
+            <li>
+                <strong>Вы замедляетесь</strong>
+                В моем пространстве уходит важность ежедневной суеты. Вы наконец-то можете сосредоточиться на своих истинных чувствах, принимая эту тишину как благо.
+            </li>
+            <li>
+                <strong>Вы чувствуете безопасность</strong>
+                Моя задача — вести вас тонко и бережно, чтобы ваш путь внутрь себя был глубоким, честным и по-настоящему вашим.
+            </li>
+            <li>
+                <strong>Вы погружаетесь в метафоры</strong>
+                Мы работаем через образы и состояния, которые становятся частью вас, наполняя работу особым, изысканным удовольствием.
+            </li>
+        </ul>
+    </section>
+
+    <section class="text-section">
+        <h2>Как вы будете чувствовать себя после?</h2>
+        <p>Трансформация, которая запускается на сессии, продолжает «прорастать» внутри вас еще долго.</p>
+
+        <ul class="feature-list">
+            <li>
+                <strong>Внутренняя гармония и благодать</strong>
+                Вы перестаете «париться» по пустякам, начинаете чувствовать душой и делать по сердцу.
+            </li>
+            <li>
+                <strong>Улыбка Моны Лизы</strong>
+                Вы выходите в мир с новым состоянием: спокойным, уверенным, с легкой улыбкой наблюдая за тем, как обстоятельства сами начинают складываться в ваших интересах.
+            </li>
+            <li>
+                <strong>Ясность и рождение нового</strong>
+                Уходит старая, отжившая версия вас. На её месте рождается ясность — вы понимаете, что что-то важное завершилось, и теперь вы можете идти своей дорогой.
+            </li>
+            <li>
+                <strong>Контакт с везением</strong>
+                Ваши маленькие «хочушки» начинают сбываться сами собой, потому что вы настроились на волну возможностей, а не ограничений.
+            </li>
+        </ul>
+    </section>
+
+<style>
+    .reviews-alt-section { margin: 60px 0; }
+    .review-card-simple {
+        background: #fff;
+        padding: 35px;
+        border-radius: 25px;
+        margin-bottom: 25px;
+        border-left: 4px solid var(--accent-gold);
+        box-shadow: 0 10px 30px rgba(184, 138, 68, 0.05);
+    }
+    .review-card-simple p { 
+        font-style: italic; 
+        color: var(--text-secondary); 
+        margin-bottom: 15px;
+        line-height: 1.8;
+    }
+    .review-card-simple .author-name {
+        display: block;
+        text-align: right;
+        font-weight: 600;
+        color: var(--accent-gold);
+        font-size: 1.1rem;
+    }
+</style>
+
+<section class="reviews-alt-section">
+    <h2>Отзывы о встречах</h2>
+    
+    <div class="review-card-simple">
+        <p>«Снежана, примите мое искреннее восхищение Вашей работой. Это был новый опыт, плодотворный и насыщенный. Он помог сосредоточиться на важных для меня чувствах, немного "замедлиться", что я принимаю как благо.»</p>
+        <span class="author-name">Irina S.</span>
+    </div>
+
+    <div class="review-card-simple">
+        <p>«Снежана, Благодарю вас за два дня интенсивного трансформационного семинара. Чувствую, что внутри "идёт работа". Хочу отметить, что ушла важность "ежедневной гонки". Не парюсь по пустякам теперь, чувствую душой и делаю по сердцу. Внутри гармония и благодать.»</p>
+        <span class="author-name">Светлана Д.</span>
+    </div>
+
+    <div class="review-card-simple">
+        <p>«Снежана очень тонко и бережно ведёт. Это был не первый мой шаг в развитии, а скорее важный этап большого пути... но именно здесь многое сложилось в ясность. Есть ощущение, будто что-то во мне завершилось — и одновременно родилось заново. Как будто я отпустила старую версию себя и позволила появиться новой. Снежана, благодарю тебя за глубину, за бережность и за это пространство, в котором происходят настоящие трансформации 🤍»</p>
+        <span class="author-name">Alla V</span>
+    </div>
+</section>
+
+    <div class="conclusion-block">
+        Я предлагаю вам не просто сессию, а путешествие домой — к самому себе. Туда, где страх сменяется доверием, а знания превращаются в ваше новое, живое состояние.
+    </div>
+
+    <div class="final-invite">
+        Приходите, чтобы просто начать видеть свою дорогу.
+    </div>
+
+    <section class="cta-box">
+        <h3>Записаться на консультацию</h3>
+        <div class="contact-group">
+            <a href="https://wa.me/972506611443" class="btn wa" target="_blank">WhatsApp</a>
+            <a href="https://t.me/snezanah" class="btn tg" target="_blank">Telegram</a>
+            <a href="tel:+972506611443" class="btn phone">Позвонить</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Снежана Ходец. Израиль, Ашкелон. <br>
+        Холистический подход к вашей трансформации.
+    </footer>
+</div>
+
+</body>
+</html>
